@@ -20,7 +20,7 @@ newbool = bool(40)
 print(newbool)    #Anything other than 0 prints true!
 
 
-# logical operators: and, or, not, is -> (Compares objects of same instance)
+# logical operators: and, or, not, is -> (Compares object identity)
 
 age = 20
 
@@ -28,6 +28,16 @@ if age > 18 and age < 60:
     print('Can drive')
 else:
     print('Cannot drive')
+
+
+# Object Identity
+
+a = [1, 2]
+b = [1, 2]
+
+print(a is b)       # Returns False
+print(a == b)       # Returns True
+
 
 # fstrings
 
