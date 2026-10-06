@@ -204,3 +204,44 @@ print(found_index)
 target2 = 11
 found_index = bin_search(array, target2)
 print(found_index)
+
+# Modules vs Packages
+# Modules are single python files like math.py
+# Packages are folders containing multiple modules and other stuff catering to a use case
+# Packages: Internal (like math) and Expernal (like pandas, downloaded using pip install)
+
+# Importing Packages
+
+import math
+math.sqrt(16)           # Returns a float
+
+import datetime
+datetime.date.today()   # Returns date
+
+# Importing only certain functions from a module
+
+from math import sqrt, log
+log(100)
+
+# Importing with alias
+
+# import pandas as pd
+
+
+# Installing packages using requirements.txt
+# You have your file, with certain versions of various libraries, etc
+# You can save the versions using pip freeze > requirements.txt
+# After creating you may see the requirements.txt in the directory
+# Anyone who you share your project can directly do pip install -r requirements.txt
+# PyPi: Official Python Package Index
+
+# Error handling in Python
+
+a = 10 / 0      # Division by 0 error
+print(a)
+
+try:
+    a = 10 / 0  # Error skips and program continues
+except:
+    print("Was trying to divide by 0")
+
