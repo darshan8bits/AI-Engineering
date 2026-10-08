@@ -104,6 +104,53 @@ print(scores)
 cgpa = scores / 10
 print(cgpa)
 
+# Broadcasting in NumPy:
+
+array1 = np.array([1, 2, 3])         # Shape: (3, )
+
+array2 = np.array([[1], [2], [3]])   # Shape: (3, 1)
+
+# Broadcasting Rules:
+# For every dimension (taken from right to left, if less dimensions and 1 assigned to missing dims)
+# Either in both arrays it should be same or any one of them is 1
+
+# In the above example,
+# the comparison is as follows:
+# (3, ) -> right -> (, 3) -> (1, 3)
+# (3, 1)                  -> (3, 1) -> Both are broadcastable
+
+# Thus, NumPy virtually extends the dimensions of the smaller array to fit the operation
+
+print(array1 + array2)
+
+# Result: [[2 3 4]
+#          [3 4 5]
+#          [4 5 6]]
+
+# Scaler arithmetic is an example of Broadcasting Too
+
+# Aggregate Functions: Return one value from an array
+
+a = np.array([[1, 2, 3, 4, 5, 6, 7, 8], [9, 10, 11, 12, 13, 14, 15, 16]])
+print(np.min(a))            # Min value: 1
+print(np.argmax(a))         # Flattens the array: Returns 15
+
+print(np.mean(array))
+print(np.var(array))
+print(np.std(array))
+
+print(np.mean(a[:, 0]))     # Mean of 1st column: 1 + 9 / 2 = 5.0
+# Above example uses chain indexing + slicing + aggregate function
+
+# Filtering
+
+ages = np.array([[18, 19, 20, 17],
+                 [16, 18, 21, 23]])
+
+newages = ages[(ages >= 18) & (ages < 21)]
+print(newages)              # Flattens the array
 
 
+# Also NumPy has a lot of random number generation / manipulation functionalities
+# using np.random, can visit the official documentation for further information
 
