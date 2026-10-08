@@ -19,7 +19,7 @@ a = [1, 2, 3]                   # Inconvenient for Scalar Multiplication
 print(a * 2)                    # Gives [1, 2, 3, 1, 2, 3]                    
 
 a = np.array([1, 2, 3])
-print(a * 2)                    # Gives [2, 4, 6], an gives it FAST
+print(a * 2)                    # Gives [2, 4, 6], and gives it FAST
 
 # Multi-dimensional Arrays
 
@@ -140,14 +140,14 @@ print(np.var(array))
 print(np.std(array))
 
 print(np.mean(a[:, 0]))     # Mean of 1st column: 1 + 9 / 2 = 5.0
-# Above example uses chain indexing + slicing + aggregate function
+# Above example uses multi-dimensional indexing + slicing + aggregate function
 
 # Filtering
 
 ages = np.array([[18, 19, 20, 17],
                  [16, 18, 21, 23]])
 
-newages = ages[(ages >= 18) & (ages < 21)]
+newages = ages[(ages >= 18) & (ages < 21)]    # While filtering in Numpy always use (brackets) inside the condition
 print(newages)              # Flattens the array
 
 
