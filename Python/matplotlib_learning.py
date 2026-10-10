@@ -122,4 +122,4 @@ plt.ylabel("Number of people")
 # too using pandas, can refer to docs for particular usage
 
 
-
+# Go to ./plots/ to view the plots of this file!
